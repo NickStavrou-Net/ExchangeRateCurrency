@@ -1,0 +1,5 @@
+@ExchangeRateCurrency.API_HostAddress = http://localhost:5177
+
+GET {{ExchangeRateCurrency.API_HostAddress}}/api/exchange-rate-currency/rates
+Accept: application/xml
+###

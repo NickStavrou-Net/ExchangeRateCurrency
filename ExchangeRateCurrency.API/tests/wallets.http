@@ -1,0 +1,18 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@Wallets.API_HostAddress = http://localhost:5177
+### Create a Wallet
+POST {{Wallets.API_HostAddress}}/api/wallets/
+Content-Type: application/json
+
+{
+  "initialBalance": 100.00,
+  "currency": "USD"
+}
+
+### Adjust Wallet Balance
+POST {{Wallets.API_HostAddress}}/api/wallets/1/adjust-balance?amount=50.00&currency=USD&strategyName=AddFunds
+Content-Type: application/json
+
+### Get Wallet Balance
+GET {{Wallets.API_HostAddress}}/api/wallets/1?currency=USD
+Content-Type: application/json

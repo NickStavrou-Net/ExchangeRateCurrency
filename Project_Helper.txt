@@ -1,0 +1,6 @@
+APPLY FIRST MIGRATION
+
+dotnet ef migrations add InitialMigration --project ExchangeRateCurrency.Infrastructure/ExchangeRateCurrency.Infrastructure.csproj --startup-project ExchangeRateCurrency.API/ExchangeRateCurrency.API.csproj --output-dir EF/Migrations
+
+
+dotnet ef database update --project ExchangeRateCurrency.Infrastructure/ExchangeRateCurrency.Infrastructure.csproj --startup-project ExchangeRateCurrency.API/ExchangeRateCurrency.API.csproj
