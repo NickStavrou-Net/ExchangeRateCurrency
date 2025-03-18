@@ -32,7 +32,7 @@ public class ExchangeRateCurrencyService : IExchangeRateCurrencyService
 		try
 		{
 			_logger.LogInformation("start fetching currency rates");
-			var currencyRates = await _ecbRateService.GetCurrencyRatesAsync();
+			var currencyRates = await _ecbRateService.GetCurrencyRatesAsync(ct);
 
 			if (currencyRates == null || !currencyRates.Any())
 			{

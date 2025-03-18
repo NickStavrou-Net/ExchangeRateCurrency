@@ -13,18 +13,18 @@ public class WalletRepository : IWalletRepository
 		_context = context;
 	}
 
-	public async Task CreateAsync(Wallet wallet)
+	public async Task CreateAsync(Wallet wallet, CancellationToken cancellationToken)
 	{
 		_context.Wallets.Add(wallet);
 		await _context.SaveChangesAsync();
 	}
 
-	public async Task<Wallet?> GetByIdAsync(long id)
-		=> await _context.Wallets.FirstOrDefaultAsync(w => w.Id == id);
+	public async Task<Wallet?> GetByIdAsync(long id, CancellationToken cancellationToken)
+		=> await _context.Wallets.FirstOrDefaultAsync(w => w.Id == id, cancellationToken);
 
-	public async Task UpdateAsync(Wallet wallet)
+	public async Task UpdateAsync(Wallet wallet, CancellationToken cancellationToken)
 	{
 		_context.Wallets.Update(wallet);
-		await _context.SaveChangesAsync();
+		await _context.SaveChangesAsync(cancellationToken);
 	}
 }

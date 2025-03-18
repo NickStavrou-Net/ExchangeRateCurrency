@@ -16,8 +16,6 @@ public class Wallet : BaseEntity
 	{
 		Balance = balance;
 	}
-
-	//todo add them to wallet service
 	public void AddFunds(decimal amount)
 	{
 		Balance += amount;

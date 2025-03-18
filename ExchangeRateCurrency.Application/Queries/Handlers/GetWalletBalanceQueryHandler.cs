@@ -11,6 +11,6 @@ public class GetWalletBalanceQueryHandler : IRequestHandler<GetWalletBalanceQuer
 	}
 	public async Task<decimal> Handle(GetWalletBalanceQuery request, CancellationToken cancellationToken)
 	{
-		return await _walletService.GetBalanceAsync(request.WalletId);
+		return await _walletService.GetBalanceAsync(request.WalletId, cancellationToken);
 	}
 }

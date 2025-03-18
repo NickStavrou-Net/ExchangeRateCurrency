@@ -13,6 +13,6 @@ public class AdjustWalletBalanceHandler : IRequestHandler<AdjustWalletBalanceCom
 
 	public async Task Handle(AdjustWalletBalanceCommand request, CancellationToken cancellationToken)
 	{
-		await _walletService.AdjustWalletBalanceAsync(request.WalletId, request.Amount, request.StrategyName);
+		await _walletService.AdjustWalletBalanceAsync(request.WalletId, request.Amount, request.StrategyName, cancellationToken);
 	}
 }

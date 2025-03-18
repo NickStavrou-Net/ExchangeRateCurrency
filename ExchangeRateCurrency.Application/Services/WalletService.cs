@@ -22,7 +22,7 @@ public class WalletService : IWalletService
 			throw new WalletNotFoundException($"Wallet with  id '{walletId}' not found.");
 
 		var strategy = _walletStrategyResolver.Resolve(strategyName);
-		await strategy.AdjustBalance(wallet, amount);
+		await strategy.AdjustBalance(wallet, amount, cancellationToken);
 
 		await _walletRepository.UpdateAsync(wallet, cancellationToken);
 	}

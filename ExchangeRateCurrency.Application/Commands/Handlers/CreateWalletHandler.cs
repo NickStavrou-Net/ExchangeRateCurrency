@@ -12,6 +12,6 @@ public class CreateWalletHandler : IRequestHandler<CreateWalletCommand, long>
 	}
 	public async Task<long> Handle(CreateWalletCommand request, CancellationToken cancellationToken)
 	{
-		return await _walletService.CreateWalletAsync(request.Currency, request.InitialBalance);
+		return await _walletService.CreateWalletAsync(request.Currency, cancellationToken ,request.InitialBalance);
 	}
 }
